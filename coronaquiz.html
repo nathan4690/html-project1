@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My simple quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+      .button {
+        background-color: #4CAF50;
+        border: 2px solid white;
+        color: white;
+        height: 30vh;
+        width: 48vw;
+        /* padding: 100% 25%; */
+        /* text-align: center; */
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition-duration: 0.4s;
+        position: absolute;
+        /* overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; */
+      }
+      
+      .question{
+        /* display: block; */
+        height: 20%;
+        width: 100%;
+      }
+      .button1:hover {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #00bd1f;
+      }
+
+      .button1 {
+        background-color: #00bd1f;
+        color: white;
+      }
+
+      .button2:hover {
+        left: 50%;
+        background-color: white; 
+        color: black; 
+        border: 2px solid #004bbd;
+      }
+
+      .button2 {
+        left: 50%;
+        background-color: #004bbd;
+        color: white;
+      }
+
+      .button3:hover {
+        top: 61%;
+        background-color: white; 
+        color: black; 
+        border: 2px solid #bd0000;
+      }
+
+      .button3 {
+        top: 61%;
+        background-color: #bd0000;
+        color: white;
+      }
+
+      .button4:hover {
+        left: 50%;
+        top: 61%;
+        background-color: white; 
+        color: black; 
+        border: 2px solid #fffb00;
+      }
+
+      .button4 {
+        top: 61%;
+        left: 50%;
+        background-color: #fffb00;
+        color: black;
+      }
+
+      .html .body{
+        height: 100%;
+        margin: 0%;
+      }
+      .main{
+        background: purple;
+        height: 95vh;
+        width: 100vw;
+      }
+      .myfont{
+        font-family: 'Lobster',cursive;
+        font-size: 100;
+        text-align: center; 
+        color: white;
+      }
+
+      .enddiv{
+        position: absolute;
+        display: none;
+        background-color: rgb(0, 145, 0);
+        height: 100vh;
+        width: 100vw;
+        left: 0px;
+        top: 0px;
+        animation-duration: 1s;
+      }
+
+      .startdiv{
+        position: absolute;
+        display: block;
+        background-color: rgb(0, 145, 0);
+        height: 100vh;
+        width: 100vw;
+        left: 0px;
+        top: 0px;
+        animation-duration: 1s;
+      }
+
+      .about{
+        bottom: 0;
+        position: fixed;
+      }
+
+      .endtext{
+        text-align: center;
+        color: white;
+      }
+      /* .blackcol{
+        color:rgb(44, 44, 44);
+      }
+      .whitecol{
+        
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <header class="myfont">
+        <h1>My Simple Quiz</h1>
+      </header>
+      <div class="question">
+        <h1 class="myfont" id="ques">Failed to load question</h1>
+      </div>
+      <button class="button button1" onclick="checkans(this.value)" id="ans1" value="Failed to load question">Failed to load question</button>
+      <button class="button button2" onclick="checkans(this.value)" id="ans2" value="Failed to load question">Failed to load question</button>
+      <button class="button button3" onclick="checkans(this.value)" id="ans3" value="Failed to load question">Failed to load question</button>
+      <button class="button button4" onclick="checkans(this.value)" id="ans4" value="Failed to load question">Failed to load question</button>
+      <div onload="replace()"><h1>.</h1></div>
+      <div class="enddiv" id="endDiv" link="64C8FA" vlink="3296FA" alink="FAFAFA">
+        <h1 class="myfont">Congratulations! You finished the Quiz!</h1><br>
+        <p class="endtext">This questions are from a Vietnamese contest about COVID-19</p>
+        <p class="endtext">This quiz may have some translation error</p>
+        <p class="endtext">Made by <a href="https://github.com/nathan4690">nathan4690</a></p>
+        <p class="endtext">Return to  
+          <a href="https://nathan4690.github.io/html-project1">main page</a>.
+        </p>
+      </div>
+      <div class="startdiv" id="startdiv">
+        <h1 class="myfont">Are you ready for the Coronavirus quiz?</h1>
+        <button class="button" style="left: 44vw;height: 10vh;width: 10vw;" onclick="startquiz()">Start the quiz now</button><br><br><br><br>
+        <p class="endtext">Not ready yet? 
+          <a href="https://nathan4690.github.io/html-project1">Return to main page</a>
+        </p>
+      </div>
+      <script src="cqquesAsker.js">
+      </script>
+      <footer class="about">
+        <a href="https://nathan4690.github.io/html-project1/about">About my page</a>
+        <a href="https://nathan4690.github.io/html-project1/support">Help and support</a>
+      </footer>
+    </div>
+  </body>
+</html>
