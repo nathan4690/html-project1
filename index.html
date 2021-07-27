@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Welcome</title>
+    <meta name="viewport" content="width=device-width"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -12,6 +13,7 @@
         width: 100%;
         margin: 0px;
       }
+
       .main {
         filter: brightness(90%);
         background-image: url("https://i.ibb.co/wRj8msC/Online-Education.webp");
@@ -89,7 +91,7 @@
         top: 100%;
         background-color: rgb(255, 255, 255);
         width: 100%;
-        height: 715px;
+        height: 100%;
       }
 
       .content h1,h2,p{
@@ -102,7 +104,7 @@
         display: none;
         margin-top: 5%;
         margin-left: 5%;
-        width: 40%;
+        width: 40vw;
       }
 
       .abp {
@@ -110,13 +112,24 @@
         position: absolute;
         width: 40vw;height: auto;
         left: 50vw;
-        top: 15vh;
+        top: 5vh;
       }
 
       @keyframes ani{
         0%{
           opacity: 0;
           transform: translateY(20%);
+        }
+        100%{
+          opacity: 1;
+          transform: translateY(0%);
+        }
+      }
+
+      @keyframes anim{
+        0%{
+          opacity: 0;
+          transform: translateY(70%);
         }
         100%{
           opacity: 1;
@@ -201,6 +214,13 @@
           text-align: left;
         }
       }
+
+      .prjt{
+        display: none;
+        margin-top: 5%;
+        margin-left: 20%;
+        width: 80vw;
+      }
     </style>
   </head>
   <body link="64C8FA" vlink="3296FA" alink="FAFAFA">
@@ -219,7 +239,7 @@
           <h1 class="my_font">Welcome to my main page</h1>
         </div>
       </div>
-      <div class="content">
+      <div class="content" id="content">
         <div class="abt" id="about">
           <h1 style="margin-left: 40%;font-size:200%;">About</h1>
           <p>This is a free open-source page for showing your projects and publishes.
@@ -229,8 +249,13 @@
           </p>
           <button class="aboutBut" onclick="window.location.href='#about'"><span>More info </span></button>
         </div>
-        <img class="abp" alt="html code"
-        src="https://static3.makeuseofimages.com/wordpress/wp-content/uploads/2010/10/HTML-Code-Examples-Featured.jpg" id="apb">
+        <img class="abp" id="apb" 
+        src="https://static3.makeuseofimages.com/wordpress/wp-content/uploads/2010/10/HTML-Code-Examples-Featured.jpg"/>
+        </img>
+        <div class="prjt" id="project">
+          <h1 style="margin-left: 30%;font-size:200%;">My projects</h1>
+          <p>All of the featured projects from python will be added here when this page finished editing</p>
+        </div>
       </div>
     </div>
     <script>
@@ -239,8 +264,16 @@
         if (scro > 0){
           document.getElementById("about").style.display = "block";
           document.getElementById("about").style.animation = "ani 2s";
-          document.getElementById("apb").style.display = "block";
+          document.getElementById("apb").style.display = "inline-block";
           document.getElementById("apb").style.animation = "ani 2s";
+          document.getElementById("content").style.height = "100%";
+        }
+        if (scro > 500){
+          document.getElementById("project").style.display = "block";
+          document.getElementById("project").style.animation = "anim 2s";
+          // document.getElementById("apb").style.display = "inline-block";
+          // document.getElementById("apb").style.animation = "ani 2s";
+          document.getElementById("content").style.height = "100%";
         }
       })
       function myFunction() {
